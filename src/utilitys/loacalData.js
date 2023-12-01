@@ -10,7 +10,7 @@ const getLocalValue = () => {
 const addToLocalStorage = id => {
   const localData = getLocalValue();
   const quantity = localData[id];
-  if (localData) {
+  if (quantity) {
     localData[id] = quantity + 1;
   } else {
     localData[id] = 1;
@@ -22,6 +22,7 @@ const removeSingleCart = id => {
   const localData = getLocalValue();
   if (id in localData) {
     delete localData[id];
+    localStorage.setItem('shopping-cart', JSON.stringify(localData));
   }
 };
 const removeAllCarts = () => {
