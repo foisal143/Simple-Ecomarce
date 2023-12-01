@@ -1,0 +1,14 @@
+.animate-text {
+  background-size: 400%;
+  animation: animate linear infinite 10s;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
