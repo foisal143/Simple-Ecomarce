@@ -5,6 +5,7 @@ import ReviewCart from '../ReviewCart/ReviewCart';
 import { removeAllCarts, removeSingleCart } from '../../utilitys/loacalData';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+
 const ReviewCarts = () => {
   const [carts, setCarts] = useContext(CartsContext);
   let total = 0;
@@ -21,6 +22,15 @@ const ReviewCarts = () => {
     setCarts([]);
     removeAllCarts();
     toast.success('All Delete done');
+  };
+  const handlePlaceOrder = () => {
+    setCarts([]);
+    removeAllCarts();
+    if (carts.length > 0) {
+      toast.success('order placed success !');
+    } else {
+      toast.error('cart is empty');
+    }
   };
   return (
     <div className="bg-slate-100 p-5 min-h-[calc(100vh-160px)]">
@@ -46,7 +56,9 @@ const ReviewCarts = () => {
               <button className="btn-outlined">Back To Shop</button>
             </Link>
           )}
-          <button className="btn-primary">Place Order</button>
+          <button onClick={handlePlaceOrder} className="btn-primary">
+            Place Order
+          </button>
         </div>
       </div>
     </div>

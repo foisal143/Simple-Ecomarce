@@ -8,6 +8,8 @@ import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
 import productsLoader from './Loaders/loaders';
 import ReviewCarts from './components/ReviewCarts/ReviewCarts';
+import Spiner from './components/Spiner/Spiner';
+import About from './components/About/About';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <p>about section done</p>,
+        element: <About></About>,
       },
     ],
   },
